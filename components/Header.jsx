@@ -1,18 +1,20 @@
 import { Moon, Sun } from 'phosphor-react';
+import { ThemeContext } from '../contexts/ThemeProvider';
 
-export function Header({ theme, onChange }) {
-  const changeTheme = () =>
-    theme === 'light' ? onChange('dark') : onChange('light');
-
+export function Header() {
   const renderThemeButton = () => {
     return (
-      <button
-        onClick={changeTheme}
-        className="flex items-center gap-2 font-semibold"
-      >
-        {theme === 'light' ? <Moon size={24} /> : <Sun size={24} />}
-        {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-      </button>
+      <ThemeContext.Consumer>
+        {theme => (
+          <button
+            onClick={theme.onChange}
+            className="flex items-center gap-2 font-semibold"
+          >
+            {theme.value === 'light' ? <Moon size={24} /> : <Sun size={24} />}
+            {theme.value === 'light' ? 'Dark Mode' : 'Light Mode'}
+          </button>
+        )}
+      </ThemeContext.Consumer>
     );
   };
 
