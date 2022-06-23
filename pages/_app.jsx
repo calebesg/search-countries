@@ -1,6 +1,6 @@
 import { DefaultSeo } from 'next-seo';
 import NextNProgress from 'nextjs-progressbar';
-import { ThemeProvider } from '../contexts/ThemeProvider';
+import { ThemeProvider } from '../contexts/ThemeContext';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
