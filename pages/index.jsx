@@ -1,15 +1,13 @@
-import Head from 'next/head';
+import { useState } from 'react';
+import { Header } from '../components/Header';
 
 export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>Where in the World?</title>
-      </Head>
+  const [theme, setTheme] = useState('light');
 
-      <main>
-        <h1 className="font-bold text-3xl">Hello</h1>
-      </main>
-    </>
+  return (
+    <div className={`${theme} flex flex-col min-h-screen`}>
+      <Header theme={theme} onChange={setTheme} />
+      <main className="flex-1 dark:bg-gray-700 transition-colors"></main>
+    </div>
   );
 }

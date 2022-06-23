@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply font-nunito;
+  @apply font-nunito bg-gray-100 dark:bg-gray-700;
 }
