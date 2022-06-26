@@ -9,7 +9,9 @@ export function Page({ children }) {
           <Header />
 
           <div className="flex-1 dark:bg-gray-700 transition-colors">
-            <div className="max-w-7xl w-full m-auto py-8">{children}</div>
+            <div className="max-w-7xl w-full m-auto py-8 px-4 xl:px-0">
+              {children}
+            </div>
           </div>
         </div>
       )}

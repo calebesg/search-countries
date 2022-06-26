@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
     <ThemeProvider>
       <DefaultSeo defaultTitle="Search Countries" />
       <NextNProgress
-        color="#29D"
+        color="#38bdf8"
         startPosition={0.3}
         stopDelayMs={200}
         height={3}
