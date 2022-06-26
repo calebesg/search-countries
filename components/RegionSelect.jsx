@@ -18,7 +18,9 @@ export function RegionSelect({ defaultLabel }) {
     return regions.map((region, index) => (
       <Listbox.Option
         key={index}
-        className={({ active }) => `cursor-pointer`}
+        className={({ active }) =>
+          `cursor-pointer ${active ? 'text-yellow-500' : ''}`
+        }
         value={region}
       >
         {region.name}
