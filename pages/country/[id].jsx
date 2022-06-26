@@ -12,66 +12,66 @@ export default function Description() {
         </button>
       </Link>
 
-      <div className="mt-8 grid grid-cols-2 gap-28">
+      <div className="mt-8 flex flex-col md:grid md:grid-cols-2 gap-8 lg:gap-28">
         <img
           src="https://imagepng.org/wp-content/uploads/2017/04/bandeira-do-brasil.png"
           alt="Brazil"
         />
 
-        <div className="flex flex-col items-start justify-center gap-8 dark:text-white">
-          <h2 className="text-2xl font-bold">Brazil</h2>
+        <div className="flex flex-col items-start justify-center gap-8 dark:text-gray-200">
+          <h2 className="text-2xl font-bold dark:text-white">Brazil</h2>
 
-          <div className="flex w-full items-start justify-between">
+          <div className="flex flex-col lg:flex-row gap-8 -mt-2 lg:mt-0 w-full items-start justify-between text-sm lg:text-base">
             <div className="font-semibold leading-7">
               <div>
                 Native Name:{' '}
-                <span className="text-gray-400 dark:text-gray-200">Brasil</span>
+                <span className="text-gray-400 dark:text-gray-400">Brasil</span>
               </div>
               <div>
                 Population:{' '}
-                <span className="text-gray-400 dark:text-gray-200">
+                <span className="text-gray-400 dark:text-gray-400">
                   215.000.000
                 </span>
               </div>
               <div>
                 Region:{' '}
-                <span className="text-gray-400 dark:text-gray-200">
+                <span className="text-gray-400 dark:text-gray-400">
                   America
                 </span>
               </div>
               <div>
                 Sub region:{' '}
-                <span className="text-gray-400 dark:text-gray-200">
+                <span className="text-gray-400 dark:text-gray-400">
                   Soult America
                 </span>
               </div>
               <div>
                 Capital:{' '}
-                <span className="text-gray-400 dark:text-gray-200">
+                <span className="text-gray-400 dark:text-gray-400">
                   Brasilia
                 </span>
               </div>
             </div>
 
-            <div className="font-semibold leading-7">
+            <div className="font-semibold leading-7 text-sm lg:text-base">
               <div>
                 Top Level Domain:{' '}
-                <span className="text-gray-400 dark:text-gray-200">.br</span>
+                <span className="text-gray-400 dark:text-gray-400">.br</span>
               </div>
               <div>
                 Currencies:{' '}
-                <span className="text-gray-400 dark:text-gray-200">Real</span>
+                <span className="text-gray-400 dark:text-gray-400">Real</span>
               </div>
               <div>
                 Languages:{' '}
-                <span className="text-gray-400 dark:text-gray-200">
+                <span className="text-gray-400 dark:text-gray-400">
                   Portugues Brasil
                 </span>
               </div>
             </div>
           </div>
 
-          <div className="flex items-start gap-4 mt-8">
+          <div className="flex flex-col md:flex-row items-start gap-4 lg:mt-8">
             <strong className="flex-shrink-0">Border countries:</strong>
 
             <div className="flex flex-wrap gap-2 dark:text-gray-300 text-xs">

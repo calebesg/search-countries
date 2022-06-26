@@ -19,7 +19,7 @@ export function RegionSelect({ defaultLabel }) {
       <Listbox.Option
         key={index}
         className={({ active }) =>
-          `cursor-pointer ${active ? 'text-yellow-500' : ''}`
+          `cursor-pointer ${active ? 'text-sky-500' : ''}`
         }
         value={region}
       >
