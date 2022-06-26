@@ -29,7 +29,7 @@ export function RegionSelect({ defaultLabel }) {
   return (
     <Listbox value={selected} onChange={setSelected}>
       <div className="relative w-60">
-        <Listbox.Button className="flex w-full rounded justify-between items-center bg-white px-6 h-12 shadow-sm dark:text-white dark:bg-gray-600">
+        <Listbox.Button className="flex w-full rounded justify-between items-center bg-white px-6 h-12 shadow-sm dark:text-white dark:bg-gray-600 transition-colors">
           <span
             className={classNames('', {
               'text-gray-400 dark:text-gray-200': selected === defaultLabel,

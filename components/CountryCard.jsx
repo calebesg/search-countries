@@ -1,7 +1,9 @@
+import Link from 'next/link';
+
 export function CountryCard() {
   return (
-    <a href="/">
-      <div className="rounded overflow-hidden bg-white dark:bg-gray-600 transition-colors shadow-sm shadow-shadow-200 dark:shadow-gray-800">
+    <Link href="/country/1234">
+      <div className="rounded overflow-hidden bg-white dark:bg-gray-600 transition-colors shadow-sm shadow-shadow-200 dark:shadow-gray-800 cursor-pointer">
         <img
           src="https://imagepng.org/wp-content/uploads/2017/04/bandeira-do-brasil.png"
           alt="Brazil"
@@ -21,6 +23,6 @@ export function CountryCard() {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
