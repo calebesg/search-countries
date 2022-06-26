@@ -2,6 +2,7 @@ import { ThemeContext } from '../contexts/ThemeContext';
 import { Header } from '../components/Header';
 import { CountryCard } from '../components/CountryCard';
 import { Search } from '../components/Search';
+import { RegionSelect } from '../components/RegionSelect';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
             <div className="max-w-7xl w-full m-auto mt-8">
               <div className="flex justify-between">
                 <Search />
+                <RegionSelect defaultLabel="Filter by Region" />
               </div>
 
               <div className="grid grid-cols-4 gap-16 mt-8">
