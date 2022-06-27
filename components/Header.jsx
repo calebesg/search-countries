@@ -3,7 +3,7 @@ import { ThemeContext } from '../contexts/ThemeContext';
 
 export function Header() {
   return (
-    <header className="bg-white px-4 py-6 shadow-sm shadow-shadow-200  dark:bg-gray-600 dark:shadow-gray-800 dark:text-white transition-colors">
+    <header className="bg-white px-4 h-20 flex items-center shadow-sm shadow-shadow-200  dark:bg-gray-600 dark:shadow-gray-800 dark:text-white transition-colors">
       <nav className="flex justify-between items-center max-w-7xl w-full m-auto">
         <h1 className="font-bold text-sm md:text-xl">Where in the world?</h1>
 

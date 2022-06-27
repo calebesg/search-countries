@@ -11,7 +11,7 @@ export default function Home() {
         <RegionSelect defaultLabel="Filter by Region" />
       </div>
 
-      <div className="grid px-8 sm:px-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16 mt-8">
+      <div className="grid px-8 sm:px-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[75px] mt-12">
         <CountryCard />
         <CountryCard />
         <CountryCard />

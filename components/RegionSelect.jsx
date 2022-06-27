@@ -30,8 +30,8 @@ export function RegionSelect({ defaultLabel }) {
 
   return (
     <Listbox value={selected} onChange={setSelected}>
-      <div className="relative w-60">
-        <Listbox.Button className="flex w-full rounded justify-between items-center bg-white px-6 h-12 shadow-sm dark:text-white dark:bg-gray-600 transition-colors">
+      <div className="relative w-52">
+        <Listbox.Button className="flex w-full rounded justify-between items-center bg-white px-6 h-14 shadow-smooth dark:text-white dark:bg-gray-600 transition-colors">
           <span
             className={classNames('', {
               'text-gray-400 dark:text-gray-200': selected === defaultLabel,
@@ -50,7 +50,7 @@ export function RegionSelect({ defaultLabel }) {
           leaveFrom="transform scale-100 opacity-100"
           leaveTo="transform scale-95 opacity-0"
         >
-          <Listbox.Options className="absolute top-1 px-6 py-4 bg-white dark:bg-gray-600 dark:text-white w-full rounded flex flex-col gap-1">
+          <Listbox.Options className="absolute top-1 px-6 py-4 bg-white dark:bg-gray-600 dark:text-white w-full rounded flex shadow-smooth flex-col gap-1">
             {renderOptions()}
           </Listbox.Options>
         </Transition>

@@ -18,6 +18,10 @@ module.exports = {
           400: 'hsl(0, 0%, 52%)',
         },
       },
+      boxShadow: {
+        smooth: '0 0 10px 1px rgba(0, 0, 0, 0.05)',
+        card: '6px 6px 20px rgba(0, 0, 0, 0.06)',
+      },
     },
   },
   plugins: [],

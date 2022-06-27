@@ -6,13 +6,13 @@ export default function Description() {
   return (
     <Page>
       <Link href="/">
-        <button className="flex items-center px-6 py-2 rounded shadow-sm bg-white dark:bg-gray-600 dark:text-white gap-2 transition-colors">
+        <button className="flex items-center px-6 py-2 rounded shadow-smooth bg-white dark:bg-gray-600 dark:text-white gap-2 transition-colors">
           <ArrowLeft size={18} />
           Back
         </button>
       </Link>
 
-      <div className="mt-8 flex flex-col md:grid md:grid-cols-2 gap-8 lg:gap-28">
+      <div className="mt-12 flex flex-col md:grid md:grid-cols-2 gap-8 lg:gap-28">
         <img
           src="https://imagepng.org/wp-content/uploads/2017/04/bandeira-do-brasil.png"
           alt="Brazil"
