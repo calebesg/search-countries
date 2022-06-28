@@ -1,8 +1,10 @@
 import Link from 'next/link';
 
 export function CountryCard({ country }) {
+  const url = `/country/${String(country.cca3).toLowerCase()}`;
+
   return (
-    <Link href={`/country/${country.name.common}`}>
+    <Link href={url}>
       <div className="rounded overflow-hidden sm:w-[264px] bg-white dark:bg-gray-600 transition-colors shadow-card cursor-pointer">
         <img
           className="w-full h-[160px] object-cover"

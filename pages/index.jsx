@@ -7,14 +7,14 @@ import { Page } from '../components/Page';
 
 import { getAllCountries } from '../functions/countries';
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const data = await getAllCountries(
     'name',
     'capital',
     'region',
     'population',
     'flags',
-    'code'
+    'cca3'
   );
 
   return {
@@ -32,7 +32,6 @@ export default function Home(props) {
   }, [props.countries]);
 
   function renderCountries() {
-    console.log(countries[0]);
     return countries.map((country, index) => (
       <CountryCard key={index} country={country} />
     ));
