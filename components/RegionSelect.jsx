@@ -11,9 +11,7 @@ const regions = [
   { name: 'Oceania' },
 ];
 
-export function RegionSelect({ defaultLabel }) {
-  const [selected, setSelected] = useState();
-
+export function RegionSelect({ defaultLabel, value, onChange }) {
   function renderOptions() {
     return regions.map((region, index) => (
       <Listbox.Option
@@ -29,15 +27,15 @@ export function RegionSelect({ defaultLabel }) {
   }
 
   return (
-    <Listbox value={selected} onChange={setSelected}>
+    <Listbox value={value} onChange={onChange}>
       <div className="relative w-52">
         <Listbox.Button className="flex w-full rounded justify-between items-center bg-white px-6 h-14 shadow-smooth dark:text-white dark:bg-gray-600 transition-colors">
           <span
             className={classNames('', {
-              'text-gray-400 dark:text-gray-200': selected === defaultLabel,
+              'text-gray-400 dark:text-gray-200': value === defaultLabel,
             })}
           >
-            {selected?.name ? selected.name : defaultLabel}
+            {value?.name ? value.name : defaultLabel}
           </span>
           <CaretDown size={14} />
         </Listbox.Button>

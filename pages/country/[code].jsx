@@ -35,17 +35,10 @@ export default function Description() {
     getCountry();
   }, [router?.query]);
 
-  if (!country) return <h1>Loading...</h1>;
+  function renderCountryDetail() {
+    if (!country) return null;
 
-  return (
-    <Page>
-      <Link href="/">
-        <button className="flex items-center px-6 py-2 rounded shadow-smooth bg-white dark:bg-gray-600 dark:text-white gap-2 transition-colors">
-          <ArrowLeft size={18} />
-          Back
-        </button>
-      </Link>
-
+    return (
       <div className="mt-12 flex flex-col md:grid md:grid-cols-2 gap-8 lg:gap-28">
         <img src={country.flag} alt={country.name.common} />
 
@@ -125,6 +118,19 @@ export default function Description() {
           </div>
         </div>
       </div>
+    );
+  }
+
+  return (
+    <Page>
+      <Link href="/">
+        <button className="flex items-center px-6 py-2 rounded shadow-smooth bg-white dark:bg-gray-600 dark:text-white gap-2 transition-colors">
+          <ArrowLeft size={18} />
+          Back
+        </button>
+      </Link>
+
+      {renderCountryDetail()}
     </Page>
   );
 }
