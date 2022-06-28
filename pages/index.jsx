@@ -5,17 +5,14 @@ import { Search } from '../components/Search';
 import { RegionSelect } from '../components/RegionSelect';
 import { Page } from '../components/Page';
 
-import { getAllCountries } from '../functions/countries';
+import {
+  getAllCountries,
+  getCountriesByRegion,
+  getCountryByName,
+} from '../functions/countries';
 
 export async function getStaticProps() {
-  const data = await getAllCountries(
-    'name',
-    'capital',
-    'region',
-    'population',
-    'flags',
-    'cca3'
-  );
+  const data = await getAllCountries();
 
   return {
     props: {
@@ -26,10 +23,25 @@ export async function getStaticProps() {
 
 export default function Home(props) {
   const [countries, setCountries] = useState([]);
+  const [regionSelected, setRegionSelected] = useState();
 
   useEffect(() => {
     setCountries(props.countries.slice(0, 20));
   }, [props.countries]);
+
+  useEffect(() => {
+    const getCountries = async () => {
+      const res = await getCountriesByRegion(regionSelected.name);
+      setCountries(res);
+    };
+
+    regionSelected && getCountries();
+  }, [regionSelected]);
+
+  async function searchTerm(term = '') {
+    const res = await getCountryByName(term);
+    setCountries(res);
+  }
 
   function renderCountries() {
     return countries.map((country, index) => (
@@ -40,8 +52,12 @@ export default function Home(props) {
   return (
     <Page>
       <div className="flex flex-col md:flex-row justify-between gap-8">
-        <Search />
-        <RegionSelect defaultLabel="Filter by Region" />
+        <Search onSubmit={searchTerm} />
+        <RegionSelect
+          value={regionSelected}
+          onChange={setRegionSelected}
+          defaultLabel="Filter by Region"
+        />
       </div>
 
       {countries && (
