@@ -41,7 +41,14 @@ export default function Description() {
 
     return (
       <div className="mt-12 flex flex-col md:grid md:grid-cols-2 gap-8 lg:gap-28">
-        <img src={country.flag} alt={country.name.common} loading="lazy" />
+        <motion.img
+          initial="hidden"
+          animate="visible"
+          variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+          src={country.flag}
+          alt={country.name.common}
+          loading="lazy"
+        />
 
         <div className="flex flex-col items-start justify-center gap-8 dark:text-gray-200">
           <h2 className="text-2xl font-bold dark:text-white">
