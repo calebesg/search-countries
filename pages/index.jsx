@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 import { CountryCard } from '../components/CountryCard';
 import { Search } from '../components/Search';
@@ -31,6 +32,7 @@ export default function Home(props) {
 
   useEffect(() => {
     const getCountries = async () => {
+      setCountries([]);
       const res = await getCountriesByRegion(regionSelected.name);
       setCountries(res);
     };
@@ -39,13 +41,31 @@ export default function Home(props) {
   }, [regionSelected]);
 
   async function searchTerm(term = '') {
+    setCountries([]);
     const res = await getCountryByName(term);
     setCountries(res);
   }
 
   function renderCountries() {
     return countries.map((country, index) => (
-      <CountryCard key={index} country={country} />
+      <motion.li
+        key={index}
+        variants={{
+          visible: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+              duration: 0.4,
+            },
+          },
+          hidden: {
+            opacity: 0,
+            scale: 0,
+          },
+        }}
+      >
+        <CountryCard country={country} />
+      </motion.li>
     ));
   }
 
@@ -61,9 +81,22 @@ export default function Home(props) {
       </div>
 
       {countries && (
-        <div className="grid px-8 sm:px-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[75px] mt-12">
+        <motion.ul
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.04,
+              },
+            },
+            hidden: {},
+          }}
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          className="grid px-8 sm:px-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[75px] mt-12"
+        >
           {renderCountries()}
-        </div>
+        </motion.ul>
       )}
     </Page>
   );
