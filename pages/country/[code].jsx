@@ -40,11 +40,23 @@ export default function Description() {
     if (!country) return null;
 
     return (
-      <div className="mt-12 flex flex-col md:grid md:grid-cols-2 gap-8 lg:gap-28">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+        className="mt-12 flex flex-col md:grid md:grid-cols-2 gap-8 lg:gap-28"
+      >
         <motion.img
           initial="hidden"
           animate="visible"
-          variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+          variants={{
+            hidden: { opacity: 0, scale: 0 },
+            visible: {
+              opacity: 1,
+              scale: 1,
+              transition: { duration: 0.4 },
+            },
+          }}
           src={country.flag}
           alt={country.name.common}
           loading="lazy"
@@ -139,7 +151,7 @@ export default function Description() {
             </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
     );
   }
 
