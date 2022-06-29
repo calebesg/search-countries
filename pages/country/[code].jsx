@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 import { ArrowLeft } from 'phosphor-react';
 import { useEffect, useState } from 'react';
 import { Page } from '../../components/Page';
@@ -40,7 +41,7 @@ export default function Description() {
 
     return (
       <div className="mt-12 flex flex-col md:grid md:grid-cols-2 gap-8 lg:gap-28">
-        <img src={country.flag} alt={country.name.common} />
+        <img src={country.flag} alt={country.name.common} loading="lazy" />
 
         <div className="flex flex-col items-start justify-center gap-8 dark:text-gray-200">
           <h2 className="text-2xl font-bold dark:text-white">
@@ -106,15 +107,29 @@ export default function Description() {
           <div className="flex flex-col md:flex-row items-start gap-4 lg:mt-8">
             <strong className="flex-shrink-0">Border countries:</strong>
 
-            <div className="flex flex-wrap gap-2 dark:text-gray-300 text-xs">
+            <motion.div
+              className="flex flex-wrap gap-2 dark:text-gray-300 text-xs"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                visible: { opacity: 1, transition: { staggerChildren: 0.3 } },
+                hidden: { opacity: 0 },
+              }}
+            >
               {country.borders.map((value, index) => (
                 <Link key={index} href={`/country/${value.cca3}`}>
-                  <span className="bg-white rounded px-4 py-1 dark:bg-gray-600 text-xs shadow-md cursor-pointer transition-colors">
+                  <motion.span
+                    variants={{
+                      visible: { opacity: 1, x: 0 },
+                      hidden: { opacity: 0, x: -10 },
+                    }}
+                    className="bg-white rounded px-4 py-1 dark:bg-gray-600 text-xs shadow-md cursor-pointer transition-colors"
+                  >
                     {value.name.common}
-                  </span>
+                  </motion.span>
                 </Link>
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
