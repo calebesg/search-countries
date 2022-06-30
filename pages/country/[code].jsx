@@ -57,7 +57,6 @@ export default function Description() {
           }}
           src={country.flag}
           alt={country.name.common}
-          loading="lazy"
         />
 
         <div className="flex flex-col items-start justify-center gap-8 dark:text-gray-200">

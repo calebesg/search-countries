@@ -10,7 +10,6 @@ export function CountryCard({ country }) {
           className="w-full h-[160px] object-cover"
           src={country?.flags.svg}
           alt={country?.name.common}
-          loading="lazy"
         />
         <div className="p-6 dark:text-gray-200">
           <strong className="dark:text-white text-lg">

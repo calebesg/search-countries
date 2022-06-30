@@ -20,6 +20,7 @@ export function Search({ onSubmit }) {
         onChange={e => setTerm(e.target.value)}
         className="flex-1 h-full text-gray-900 outline-0 text-sm bg-transparent dark:text-white dark:placeholder:text-gray-200"
         type="text"
+        aria-label="Search for a country"
         placeholder="Search for a country..."
       />
     </form>

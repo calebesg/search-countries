@@ -8,11 +8,11 @@ export function Page({ children }) {
         <div className={`${value} flex flex-col min-h-screen`}>
           <Header />
 
-          <div className="flex-1 dark:bg-gray-700 transition-colors">
+          <main className="flex-1 dark:bg-gray-700 transition-colors">
             <div className="max-w-7xl w-full m-auto py-12 px-4 xl:px-0">
               {children}
             </div>
-          </div>
+          </main>
         </div>
       )}
     </ThemeContext.Consumer>
