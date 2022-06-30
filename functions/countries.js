@@ -48,10 +48,13 @@ export async function getCountryByCode(code) {
   if (response.status !== 200) return null;
 
   const borders = await getNamesByCode(response.data.borders);
+  console.log({ ...response.data, borders: borders });
   return { ...response.data, borders: borders };
 }
 
 async function getNamesByCode(arrCode) {
+  if (arrCode.length === 0) return [];
+
   const response = await restcontries.get(`/alpha`, {
     params: {
       codes: arrCode.join(','),
@@ -59,6 +62,5 @@ async function getNamesByCode(arrCode) {
     },
   });
 
-  if (response.status !== 200) return [];
   return response.data;
 }
