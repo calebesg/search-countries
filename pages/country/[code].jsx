@@ -15,8 +15,6 @@ export default function Description() {
     const getCountry = async function () {
       const data = await getCountryByCode(router.query.code);
 
-      console.log(data);
-
       const serialized = {
         name: data.name,
         flag: data.flags.svg,

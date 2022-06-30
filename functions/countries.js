@@ -48,7 +48,6 @@ export async function getCountryByCode(code) {
   if (response.status !== 200) return null;
 
   const borders = await getNamesByCode(response.data.borders);
-  console.log({ ...response.data, borders: borders });
   return { ...response.data, borders: borders };
 }
 
